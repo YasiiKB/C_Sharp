@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HDF5Dataset", "HDF5Dataset.csproj", "{0E6F06C8-66B0-4E36-B1EA-8699C4260BBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E6F06C8-66B0-4E36-B1EA-8699C4260BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E6F06C8-66B0-4E36-B1EA-8699C4260BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E6F06C8-66B0-4E36-B1EA-8699C4260BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E6F06C8-66B0-4E36-B1EA-8699C4260BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93B9E562-454D-415B-A841-CACF92FD8068}
+	EndGlobalSection
+EndGlobal
