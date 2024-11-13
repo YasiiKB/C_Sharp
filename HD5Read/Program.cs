@@ -25,7 +25,7 @@ namespace HDF5Read
         static void Main(string[] args)
         {
             // File Path
-            string myPath = "C:\\Users\\stude\\Desktop\\Learning\\HD5Create\\";
+            string myPath = "C:\\Users\\stude\\Desktop\\Learning\\HD5Write\\";
             string fileName = myPath + "testFile.H5";
 
             // Open the HDF5 file for reading

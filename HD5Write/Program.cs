@@ -4,7 +4,7 @@
 
 using HDF5CSharp;
 
-namespace HD5Create
+namespace HD5Write
 {
     class TestClass
     {
@@ -33,10 +33,10 @@ namespace HD5Create
                     TestReals = new double[] { 5.6222, 9.575753, 10 },
                     TestImaginaries = new double[] { -13242, 0.6243, -2.95353 }
                 };
-                
+
 
                 // Create a HDF5 file
-                string myPath = "C:\\Users\\stude\\Desktop\\Learning\\HD5Create\\";
+                string myPath = "C:\\Users\\stude\\Desktop\\Learning\\HD5Write\\";
                 long fileId = Hdf5.CreateFile(myPath + "testFile.H5");
 
                 // Write the object to the file
