@@ -1,9 +1,10 @@
-﻿// Example from https://www.nuget.org/packages/HDF5-CSharp/
-// Making a sample HDF5 file and saving it 
+﻿// Example from https://www.nuget.org/packages/HDF5-CSharp
+// Install HDF5-CSharp from NuGet Package Manager or 'dotnet add package HDF5-CSharp --version 1.19.0'
+// This code creates a HDF5 file and writes an object to it
 
 using HDF5CSharp;
 
-namespace TestClassWithArray
+namespace HD5Create
 {
     class TestClass
     {
@@ -14,7 +15,7 @@ namespace TestClassWithArray
         public bool TestBoolean { get; set; }
         public string TestString { get; set; }
         public double[] TestReals { get; set; }
-        public double[] TestImaginaries{ get; set; }
+        public double[] TestImaginaries { get; set; }
 
         class Program
         {
@@ -32,10 +33,11 @@ namespace TestClassWithArray
                     TestReals = new double[] { 5.6222, 9.575753, 10 },
                     TestImaginaries = new double[] { -13242, 0.6243, -2.95353 }
                 };
+                
 
                 // Create a HDF5 file
-                string myPath = "C:\\Users\\stude\\Desktop\\Learning\\HDF5Tests\\";
-                long fileId = Hdf5.CreateFile(myPath + "testFile_complex.H5");
+                string myPath = "C:\\Users\\stude\\Desktop\\Learning\\HD5Create\\";
+                long fileId = Hdf5.CreateFile(myPath + "testFile.H5");
 
                 // Write the object to the file
                 Hdf5.WriteObject(fileId, testClass, "testObject");

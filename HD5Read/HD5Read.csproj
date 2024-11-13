@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HDF.PInvoke" Version="1.10.11" />
     <PackageReference Include="HDF5-CSharp" Version="1.19.0" />
   </ItemGroup>
 

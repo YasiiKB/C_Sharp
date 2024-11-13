@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HDF5TestsRead", "HDF5TestsRead.csproj", "{D5F4D876-E404-4E8D-B836-A4FC9C1BE469}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HD5Read", "HD5Read.csproj", "{D17AAEB8-B765-4590-AFB5-990A6F2487DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D5F4D876-E404-4E8D-B836-A4FC9C1BE469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5F4D876-E404-4E8D-B836-A4FC9C1BE469}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5F4D876-E404-4E8D-B836-A4FC9C1BE469}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5F4D876-E404-4E8D-B836-A4FC9C1BE469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17AAEB8-B765-4590-AFB5-990A6F2487DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17AAEB8-B765-4590-AFB5-990A6F2487DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17AAEB8-B765-4590-AFB5-990A6F2487DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17AAEB8-B765-4590-AFB5-990A6F2487DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8FA95A25-04BE-4EFD-B3DE-B9A2861C3EC8}
+		SolutionGuid = {CAF170ED-F36A-429B-B5AE-FCE406B0A3A7}
 	EndGlobalSection
 EndGlobal

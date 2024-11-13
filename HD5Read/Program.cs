@@ -1,8 +1,10 @@
 ﻿// Reading File Structure and data from a .H5 file 
+// dotnet add package HDF5-CSharp --version 1.19.0
+// From https://www.nuget.org/packages/HDF5-CSharp/
 
 using HDF5CSharp;
 
-namespace HDF5TestsRead
+namespace HDF5Read
 {
     // ReadFlatFileStructure shows these (Only needed for using the data later on
     // No Schema is produced or needed
@@ -23,8 +25,8 @@ namespace HDF5TestsRead
         static void Main(string[] args)
         {
             // File Path
-            string myPath = "C:\\Users\\stude\\Desktop\\Learning\\HDF5Tests\\";
-            string fileName = myPath + "testFile_complex.H5";
+            string myPath = "C:\\Users\\stude\\Desktop\\Learning\\HD5Create\\";
+            string fileName = myPath + "testFile.H5";
 
             // Open the HDF5 file for reading
             long fileId = Hdf5.OpenFile(fileName);
