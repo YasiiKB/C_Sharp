@@ -32,7 +32,9 @@ namespace HDF5Read
             long fileId = Hdf5.OpenFile(fileName);
 
             // Read and display the file structure (optional)
+            Console.WriteLine("File Structure:");
             var tree = Hdf5.ReadFlatFileStructure(fileName);
+            //var flat = Hdf5.ReadFlatFileStructure(fileName);
             foreach (var item in tree)
             {
                 Console.WriteLine(item);
