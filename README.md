@@ -12,6 +12,7 @@ dotnet add package HDF5-CSharp --version 1.19.0
 
 
 ## PureHDF
+Two files are in the PureHDF folder.
 #### Installation
 ```
 dotnet add package PureHDF --version 2.1.1
