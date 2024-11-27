@@ -1,7 +1,9 @@
 ﻿// based on this page: https://planetcalc.com/7899/ and https://statisticsbyjim.com/time-series/moving-averages-smoothing/
 
-// to do:
-// 1. make it work for even window size
+// TO DO:
+// 1. the calulated value for even window size is not correct
+// 2. the first and last values (before the window size = half before and half after the center, is reached) should be the same as the original data OR not included in the result. 
+// 3. What's the differnece btw List<double> and double[]? Which one is better to use for cma?
 
 using System;
 
@@ -13,7 +15,7 @@ namespace CenteredMA
         {
             // Dummy data
             var dummy_data = new List<double> { 100, 120, 150, 180, 200, 220, 210, 250, 260, 240, 220, 210 };
-            int win_size = 3;  // user input
+            int win_size = 5;  // user input
 
             // Ramdomly remove some data points
             int RandomRemoveCount = 0; // user input
@@ -46,32 +48,61 @@ namespace CenteredMA
             int dataLength = data.Count;
             double[] cma = new double[dataLength];
 
-            // Ensure window size is odd for a proper "center"
-            if (windowSize % 2 == 0)
+            // For Odd window size
+            if (windowSize % 2 != 0)
             {
-                throw new ArgumentException("Window size must be odd for a centered moving average.");
-            }
+                int halfWindow = windowSize / 2;
 
-            int halfWindow = windowSize / 2;
-
-            for (int i = 0; i < dataLength; i++)
-            {
-                int start = Math.Max(i - halfWindow, 0);            // Avoid negative values
-                int end = Math.Min(i + halfWindow, dataLength - 1); // Avoid "out of bounds" error
-                int count = end - start + 1;
-                double sum = 0;
-
-                // Sum the values in the window
-                for (int j = start; j <= end; j++)
+                for (int i = 0; i < dataLength; i++)
                 {
-                    sum += data[j];
-                }
+                    int start = Math.Max(i - halfWindow, 0);            // Avoid negative values
+                    int end = Math.Min(i + halfWindow, dataLength - 1); // Avoid "out of bounds" error
+                    int count = end - start + 1;
+                    double sum = 0;
 
-                // Calculate the centered moving average for the current point
-                cma[i] = sum / count;
+                    // Sum the values in the window
+                    for (int j = start; j <= end; j++)
+                    {
+                        sum += data[j];
+                    }
+
+                    // Calculate the centered moving average for the current point
+                    cma[i] = sum / count;
+                }
+                return cma;
             }
 
-            return cma;
+            // For Even window size
+            else
+            {
+                int halfWindow = windowSize / 2;
+
+                for (int i = 0; i < dataLength; i++)
+                {
+                    int start = Math.Max(i - halfWindow, 0);            // Avoid negative values
+                    int end = Math.Min(i + halfWindow, dataLength - 1); // Avoid "out of bounds" error
+                    int count = end - start + 1;
+                    double sum = 0;
+
+                    // Sum the values in the window
+                    for (int j = start; j <= end; j++)
+                    {
+                        // Divide the end points by 2 to get the correct length
+                        if (j == start || j == end)
+                        {
+                            sum += data[j] / 2;
+                            Console.WriteLine("j: " + j + " data[j]: " + data[j] + " Sum: " + sum);
+                        }
+                        else
+                        {
+                            sum += data[j];
+                        }
+                    }
+                    // Calculate the centered moving average for the current point
+                    cma[i] = sum / count;
+                }
+                return cma;
+            }
         }
     }
 }
