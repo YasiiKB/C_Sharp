@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2_RelayCommand"    
         mc:Ignorable="d"
-        Title="Names" Height="300" Width="400">
+        Title="Names" Height="500" Width="600">
 
     <Window.InputBindings>
         <KeyBinding Key="Return" Command="{Binding AddNameCommand}" />

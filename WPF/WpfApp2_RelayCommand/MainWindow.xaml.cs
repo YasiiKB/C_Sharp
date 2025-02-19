@@ -1,14 +1,6 @@
 ﻿using System.IO;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfApp2_RelayCommand
 {
@@ -34,10 +26,10 @@ namespace WpfApp2_RelayCommand
             ImportNamesCommand = new RelayCommand(_ => ImportNames());
         }
 
-        // function to add name to the listbox if it is not empty and not already in the list
+        // function to add name to the listbox if it is not already in the list
         private void AddName()
         {
-            if (!string.IsNullOrWhiteSpace(txtName.Text) && !lstNames.Items.Contains(txtName.Text))
+            if (!lstNames.Items.Contains(txtName.Text))
             {
                 lstNames.Items.Add(txtName.Text);
                 txtName.Clear();
@@ -57,14 +49,11 @@ namespace WpfApp2_RelayCommand
             return !string.IsNullOrWhiteSpace(txtName.Text);
         }
 
-        // function to remove name from the listbox if it is selected
+        // function to remove name from the listbox
         private void RemoveName()
         {
-            if (lstNames.SelectedItem != null)
-            {
-                lstNames.Items.Remove(lstNames.SelectedItem);
-                UpdateNameCount();
-            }
+            lstNames.Items.Remove(lstNames.SelectedItem);
+            UpdateNameCount();
         }
 
         // function to check if the name is selected --> can be removed from the listbox
